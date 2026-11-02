@@ -1,0 +1,35 @@
+// Name: OKAFOR EMMANUEL IFEANYICHUKWU
+// Matric No: 25/16516
+// Department: SOFTWARE ENGINEERING
+// Course: COS 201
+
+import java.util.Scanner;
+
+public class SimpleCalculator {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Student: OKAFOR EMMANUEL IFEANYICHUKWU - 25/16516 - SOFTWARE ENGINEERING");
+        System.out.print("Enter first number: ");
+        double num1 = input.nextDouble();
+        System.out.print("Enter operator (+, -, *, /): ");
+        char operator = input.next().charAt(0);
+        System.out.print("Enter second number: ");
+        double num2 = input.nextDouble();
+        double result = 0;
+        boolean valid = true;
+        switch (operator) {
+            case '+': result = num1 + num2; break;
+            case '-': result = num1 - num2; break;
+            case '*': result = num1 * num2; break;
+            case '/': 
+                if (num2 != 0) { result = num1 / num2; } 
+                else { System.out.println("Error: Cannot divide by zero"); valid = false; }
+                break;
+            default: System.out.println("Invalid operator"); valid = false;
+        }
+        if (valid) {
+            System.out.println("Result: " + num1 + " " + operator + " " + num2 + " = " + result);
+        }
+        input.close();
+    }
+}
